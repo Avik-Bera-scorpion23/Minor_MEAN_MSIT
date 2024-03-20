@@ -1,0 +1,46 @@
+<div>
+    <br><br>
+    <h1 class="sticky-top" style="font-family: cursive;">Welcome</h1>
+
+    <div class="Main">
+
+        <div class="card registration">
+
+
+            <form id="register" #loginForm="ngForm" (ngSubmit)="getLogin(loginForm.value)">
+                <label>Email id :</label>
+                <br>
+                <input type="email" ngModel name="email" class="form-control" id="name"
+                    placeholder="Enter Your Valid Email Id">
+                <br><br>
+                <label>Enter Password :</label>
+                <br>
+                <input type="password" ngModel placeholder="Enter The Password" class="form-control" name="password"
+                    id="myInput"><br>
+                <input type="checkbox" onclick="myFunction()">Show Password
+                <!-- <script>
+                    function myFunction() {
+                        var x = document.getElementById("myInput");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+                </script> -->
+                <br>
+
+                <div style="width: 200px;height: 50px;">
+                    <button type="submit" class="btn btn-success" style="padding: 5px;">Log In</button>
+                    <button type="reset" class="btn btn-danger" style="padding: 5px;">Reset</button>
+                </div>
+
+            </form>
+
+
+            <h1>{{LogD.msg}}</h1>
+        </div>
+
+    </div>
+
+</div>

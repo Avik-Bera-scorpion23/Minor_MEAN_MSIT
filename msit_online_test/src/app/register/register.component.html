@@ -1,0 +1,140 @@
+ <br><br>
+ <div class="container">
+<h1 style="color: firebrick;text-align: center;font-family: cursive;">Reactive form of M.S.I.T online test</h1>
+  
+<div class="card" style="align-items: center;">
+
+<form [formGroup]="registerForm" 
+       (ngSubmit)="submitRegister()" style="align-content: center;" class="form_style">
+<div class="form-group ">
+<table>
+  <!-- User Name field-->
+<tr>
+<td>    
+    <label for="username">User Name : </label>
+</td>
+<td>
+    <input type="text" class="form-control" ngModel name="username" [formControl]="username">
+<div [hidden]="username.valid || username.untouched" class="error" >
+   <div [hidden]="!username.hasError('required')">
+       Please filled Username field !
+   </div>
+   <div [hidden]="!username.hasError('minlength')">
+    Please filled atleast 8 length password !   <!--  Icon -->
+    </div>
+     <div [hidden]="!username.hasError('maxlength')">
+        Please filled atmost 16 length password !
+     </div>
+</div>
+</td>
+</tr>
+      <!-- Password field-->
+<tr>
+    <td>    
+        <label for="password">User Password : </label>
+    </td>
+    <td>
+        <input type="password" class="form-control" ngModel name="password" [formControl]="password">
+    <div [hidden]="password.valid || password.untouched" class="error" >
+       <div [hidden]="!password.hasError('required')">
+           Please filled Password field !
+       </div>
+       <div [hidden]="!password.hasError('minlength')">
+        Please filled atleast 8 length password !   <!--  Icon -->
+        </div>
+         <div [hidden]="!password.hasError('maxlength')">
+            Please filled atmost 16 length password !
+         </div>
+    </div>
+    </td>
+    </tr>
+
+        <!-- Confirm Password field-->
+    <tr>
+        <td>    
+            <label for="cpassword">Confirm Password : </label>
+        </td>
+        <td>
+            <input type="password" class="form-control" ngModel name="cpassword" [formControl]="cpassword">
+        <div [hidden]="cpassword.valid || cpassword.untouched" class="error" >
+           <div [hidden]="!cpassword.hasError('required')">
+               Please filled Confirm Password field !
+           </div>
+           <div [hidden]="!cpassword.hasError('minlength')">
+            Please filled atleast 8 length password !   <!--  Icon -->
+            </div>
+             <div [hidden]="!cpassword.hasError('maxlength')">
+                Please filled atmost 16 length password !
+             </div>
+        </div>
+        </td>
+        </tr>
+
+                <!-- Email field-->
+        <tr>
+            <td>    
+                <label for="mail">E-Mail : </label>
+            </td>
+            <td>
+                <input type="email" class="form-control" ngModel name="mail" [formControl]="mail">
+            <div [hidden]="username.valid || username.untouched" class="error" >
+               <div [hidden]="!username.hasError('required')">
+                   Please filled E-Mail field !   <!--  Icon -->
+               </div>
+            </div>
+            </td>
+            </tr>
+    
+            
+
+
+                          <!-- Phone Number -->
+
+                <tr>
+                    <td>    
+                        <label for="mail">Phone number : </label>
+                    </td>
+                    <td>
+                        <input type="tel" class="form-control" ngModel name="phn" [formControl]="phn">
+                    <div [hidden]="username.valid || username.untouched" class="error" >
+                       <div [hidden]="!username.hasError('required')">
+                         Please enter your phone number !     <!--  Icon -->
+                       </div>
+                    </div>
+                    </td>
+                       </tr>
+            
+                    
+              <tr> 
+                  <td>         
+   <label for="gender">Male :</label>
+   <input type="radio" name="gender" value="male" ngModel [formControl]="gender"> </td>
+   <td>
+   <label for="gender">Female :</label>
+   <input type="radio" name="gender" value="female" ngModel [formControl]="gender"> <br>
+
+
+
+</td>
+</tr>
+<br>
+<tr><td>
+
+    <button type="submit" class="btn btn-success">Register Now</button>
+    
+    
+            </td></tr>
+        
+
+   <tr><td> <button type="reset" class="btn btn-danger">Reset</button>  </td></tr>         
+</table>
+</div>
+</form>
+    <!--{{formd.name}}
+--> 
+
+
+</div>
+
+</div>
+
